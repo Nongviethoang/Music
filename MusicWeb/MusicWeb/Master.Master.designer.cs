@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MusicWeb
-{
-
-
-    public partial class Master
-    {
-
+namespace MusicWeb {
+    
+    
+    public partial class Master {
+        
         /// <summary>
         /// head control.
         /// </summary>
@@ -22,7 +20,25 @@ namespace MusicWeb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-
+        
+        /// <summary>
+        /// txttenbh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txttenbh;
+        
+        /// <summary>
+        /// searchM control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button searchM;
+        
         /// <summary>
         /// avatar control.
         /// </summary>
@@ -31,7 +47,7 @@ namespace MusicWeb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image avatar;
-
+        
         /// <summary>
         /// showName control.
         /// </summary>
@@ -40,7 +56,7 @@ namespace MusicWeb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label showName;
-
+        
         /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>

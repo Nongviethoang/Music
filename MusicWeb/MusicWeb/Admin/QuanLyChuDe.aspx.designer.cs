@@ -13,31 +13,22 @@ namespace MusicWeb.Admin {
     public partial class QuanLyChuDe {
         
         /// <summary>
-        /// tblThemChuDe control.
+        /// txtmacd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblThemChuDe;
+        protected global::System.Web.UI.WebControls.TextBox txtmacd;
         
         /// <summary>
-        /// txtMaCd control.
+        /// txttencd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMaCd;
-        
-        /// <summary>
-        /// txtTenChuDe control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTenChuDe;
+        protected global::System.Web.UI.WebControls.TextBox txttencd;
         
         /// <summary>
         /// btnThemCd control.
@@ -49,13 +40,13 @@ namespace MusicWeb.Admin {
         protected global::System.Web.UI.WebControls.Button btnThemCd;
         
         /// <summary>
-        /// bntXoa control.
+        /// btnSua control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bntXoa;
+        protected global::System.Web.UI.WebControls.Button btnSua;
         
         /// <summary>
         /// mess control.
@@ -67,21 +58,12 @@ namespace MusicWeb.Admin {
         protected global::System.Web.UI.WebControls.Label mess;
         
         /// <summary>
-        /// GridView1 control.
+        /// dsChuDe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// SqlDataSource1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.GridView dsChuDe;
     }
 }

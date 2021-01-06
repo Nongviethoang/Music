@@ -5,68 +5,58 @@
     Thêm Album
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="formThem" runat="server">
-    <asp:Table ID="themAlbum" runat="server">
-        <asp:TableRow>
-            <asp:TableCell>Tên Album</asp:TableCell>
-            <asp:TableCell><asp:TextBox ID="txtTenAablbum" runat="server"></asp:TextBox></asp:TableCell>
-        </asp:TableRow>
-        <asp:TableRow>
-            <asp:TableCell>Mô tả</asp:TableCell>
-            <asp:TableCell><asp:TextBox ID="txtmota" runat="server"></asp:TextBox></asp:TableCell>
-        </asp:TableRow>
-        <asp:TableRow>
-            <asp:TableCell>Anh</asp:TableCell>
-            <asp:TableCell><asp:TextBox ID="txtAnh" runat="server"></asp:TextBox></asp:TableCell>
-        </asp:TableRow>
-        <asp:TableRow>
-            <asp:TableCell>Thời gian</asp:TableCell>
-            <asp:TableCell><asp:TextBox ID="txtthoigian" runat="server"></asp:TextBox></asp:TableCell>
-        </asp:TableRow>
-        <asp:TableRow>
-            <asp:TableCell>Danh sách bài hát</asp:TableCell>
-            <asp:TableCell><asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></asp:TableCell>
-        </asp:TableRow>
-    </asp:Table>
-    <asp:Button ID="themAlbummoi" runat="server" Text="Thêm Album" OnClick="themAlbummoi_Click"/>
+        <div class="form-group">
+            <label>Mã album</label>
+            <asp:TextBox ID="txtMaAl" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
+        </div>
+    <div class="form-group">
+            <label>Tên album</label>
+            <asp:TextBox ID="txtTenAL" runat="server" CssClass="form-control"></asp:TextBox>
+        </div>
+   
+    <div class="form-group">
+            <label>Thời gian</label>
+        <asp:Calendar ID="dtAl" runat="server" DayNameFormat="Full"></asp:Calendar>
+        </div>
+     <div class="form-group">
+            <label>Ảnh</label>
+            <asp:FileUpload ID="imgAl" runat="server" />
+        </div>
+    <div class="form-group">
+            <label>Mô tả</label>
+            <asp:TextBox ID="txtMota" runat="server" CssClass="form-control"></asp:TextBox>
+        </div>
+    <asp:Button ID="themAlbummoi" runat="server" Text="Thêm Album" OnClick="themAlbummoi_Click" CssClass="btn btn-primary"/>
+
+    <asp:Button ID="btnSua" runat="server" CssClass="btn btn-primary" Text="Sửa" OnClick="btnSua_Click" />
+    <br />
+    <asp:Label ID="mes" runat="server"></asp:Label>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="TenDanhSach" runat="server">Danh sách Album
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ListDanhSach" runat="server">
-
-  
-
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="maAlbum" DataSourceID="SqlDataSource1">
+    <asp:GridView ID="dsAlbum" runat="server" AutoGenerateColumns="False">
         <Columns>
-            <asp:BoundField DataField="maAlbum" HeaderText="maAlbum" InsertVisible="False" ReadOnly="True" SortExpression="maAlbum" />
-            <asp:BoundField DataField="tenAlbum" HeaderText="tenAlbum" SortExpression="tenAlbum" />
-            <asp:BoundField DataField="moTa" HeaderText="moTa" SortExpression="moTa" />
-            <asp:BoundField DataField="anh" HeaderText="anh" SortExpression="anh" />
-            <asp:BoundField DataField="thoiGian" HeaderText="thoiGian" SortExpression="thoiGian" />
-            <asp:BoundField DataField="danhSachBai" HeaderText="danhSachBai" SortExpression="danhSachBai" />
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
+            <asp:BoundField DataField="maAlbum" HeaderText="Mã album" />
+            <asp:BoundField DataField="tenAlbum" HeaderText="Tên Album" />
+            <asp:BoundField DataField="anh" HeaderText="Ảnh" />
+            <asp:BoundField DataField="thoiGian" HeaderText=" Thời gian phát hành" />
+            <asp:BoundField DataField="mota" HeaderText="Mô tả" />
+            <asp:TemplateField HeaderText="Xóa">
+                <ItemTemplate>
+                    <asp:Button ID="xoa" runat="server"
+                        CommandName="xoa" CommandArgument='<%#Bind("maAlbum")%>' OnCommand="xoa_Command" 
+                        Text="Xóa" OnClientClick="return confirm('Bạn có chắc chắn xóa?')" />
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Sửa">
+                <ItemTemplate>
+                    <asp:Button ID="sua" runat="server"
+                        CommandName="sua" CommandArgument='<%#Bind("maAlbum")%>' OnCommand="sua_Command" 
+                        Text="Sửa" />
+                </ItemTemplate>
+            </asp:TemplateField>
         </Columns>
+
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseMusicConnectionString %>" DeleteCommand="DELETE FROM [tblAlbumBaiHat] WHERE [maAlbum] = @maAlbum" InsertCommand="INSERT INTO [tblAlbumBaiHat] ([tenAlbum], [moTa], [anh], [thoiGian], [danhSachBai]) VALUES (@tenAlbum, @moTa, @anh, @thoiGian, @danhSachBai)" SelectCommand="SELECT * FROM [tblAlbumBaiHat]" UpdateCommand="UPDATE [tblAlbumBaiHat] SET [tenAlbum] = @tenAlbum, [moTa] = @moTa, [anh] = @anh, [thoiGian] = @thoiGian, [danhSachBai] = @danhSachBai WHERE [maAlbum] = @maAlbum">
-        <DeleteParameters>
-            <asp:Parameter Name="maAlbum" Type="Int32" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="tenAlbum" Type="String" />
-            <asp:Parameter Name="moTa" Type="String" />
-            <asp:Parameter Name="anh" Type="String" />
-            <asp:Parameter Name="thoiGian" Type="DateTime" />
-            <asp:Parameter Name="danhSachBai" Type="String" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="tenAlbum" Type="String" />
-            <asp:Parameter Name="moTa" Type="String" />
-            <asp:Parameter Name="anh" Type="String" />
-            <asp:Parameter Name="thoiGian" Type="DateTime" />
-            <asp:Parameter Name="danhSachBai" Type="String" />
-            <asp:Parameter Name="maAlbum" Type="Int32" />
-        </UpdateParameters>
-    </asp:SqlDataSource>
-
-  
-
 </asp:Content>

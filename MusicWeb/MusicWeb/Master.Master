@@ -9,403 +9,96 @@
     </asp:ContentPlaceHolder>
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
     <link rel=”stylesheet” href=”https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css”>
-    <style>
-        *{
-            margin: 0px;
-            padding: 0px;
-        }
-        html,body{
-            font-family: Arial, Helvetica, sans-serif;
-            background-image: #F0F0F0;
-            height:100%;
-            width: 100%;
-        }
-        header{
-            width: 100%;
-            height: 10%;
-            box-shadow: #FFC0CB 5px 10px 20px 0px;
-        }
-        header #head1{
-            margin-top: 5px;
-            margin-left: 20px;
-            float: left;
-            width: 140px;
-            height: 50px;
-        }
-        header #head2{
-            float: right;
-            width: 250px;
-            height: 50px;
-            margin-top: 10px;
-        }
-        header #logo{
-            width: 100%;
-            height: 100%;
-        }
-        #head2 #info{
-            width: 60%;
-            height: 100%;
-            float: left;
-        }
-        #head2 #Log {
-            float: right;
-            width: 40%;
-            height: 100%;
-        }
-        #info #avatar{
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: alias;
-        }
-        #Log img{
-            float: left;
-            width: 20px;
-            height: 20px;
-            margin-top: 35px;
-            margin-left: 10px;
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-        }
-        #Log #Out_In{
-            height: 50px;
-            padding: 3px 3px 3px 3px;
-            margin-top: 55px;
-            margin-left: 10px;
-            border-radius: 10%;
-            background: white;
-            display: none;
-            position: absolute;
-            cursor: pointer;
-        }
-        #Out_In .down{
-            background: white;
-            border: none;
-            padding: 6px 10px;
-            display: block;
-            cursor: pointer;
-        }
-        #Log:hover #Out_In{
-            display: block;
-        }
-        #Log .down:hover{
-            background: pink;
-        }
-        #main{
-            width: 25%;
-            overflow: auto;
-            height: 80%;
-            line-height: 2;
-            font-size: 1.4rem;
-            float: left;
-        }
-        #main h4{
-            margin-left: 20px;
-        }
-        .music{
-            width: 200px;
-            height: 50px;
-        }
-        .music img{
-            width: 20%;
-            height: 70%;
-            float: left;
-            margin-left: 10px;
-        }
-        .fas{
-            color: black;
-            font-size: 30px;
-        }
-        .music li{
-            width: 75%;
-            float: right; 
-            list-style: none;
-        }
-        .music li a {
-            width: 90%;
-            float: right;
-            font-size: 18px;
-            text-decoration: none;
-            color: black;
-        }
-        .music #dropDown{
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-        }
-        .music #dropDown_content {
-            border-radius: 10%;
-            display: none;
-            position: absolute;
-            background-color: #f1f1f1;
-            width: 160px;
-            margin-top: 30px;
-            height: 200px;
-            font-size: 15px;
-            box-shadow: rgba(0,0,0,0.2) 0px 8px 16px 0px;
-        }
-        .music #dropDown_content p {
-            color: black;
-            padding: 10px 16px;
-            display: block;
-        }
-        #dropDown:hover #dropDown_content {
-            display: block;
-        }
-        #dropDown_content p:hover {
-            background-color: pink;
-            transition-delay: 0.2s;
-        }
-        #main #UpSong{
-            padding: 5px 10px 5px 10px;
-            border-radius: 3px;
-            box-shadow: rgba(0,0,0,0.3) 2px 2px 20px 0px;
-            color: black;
-            font-size: 15px;
-            text-decoration: none;
-            border: solid black 1px;
-            background-color: white;
-        }
-        #main #UpSong:hover{
-            color: white;
-            background-color: hotpink;
-        }
-        #main #id_user{
-            display: none;
-        }
-        #content{
-            width: 75%;
-            height: 80%;
-            float: right;
-            background-color: white;
-            overflow: scroll;
-        }
-        #content::-webkit-scrollbar {
-             display: none;
-        }
-        #playMusic{
-            width: 100%;
-            height: 10%;
-            float: right;
-            background: green;
-            box-shadow: #FFC0CB 5px 5px 20px 0px;
-        }
-        #audio{
-            width: 60%;
-            float: right;
-            padding-right: 80px;
-        }
-        #show{
-            width: 250px;
-            height: 100%;
-            float: left;
-        }
-        #musicDisc{
-            width: 55px;
-            height: 55px;
-            border: none;
-            float: left;
-            margin-left:10px;
-            margin-top: 6px;
-            animation-name: spin_around;
-            animation-duration: 4s;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-        }
-        @-webkit-keyframes spin_around{
-            0%{
-                transform: rotate(0deg);
-            }
-            100%{
-                transform: rotate(360deg);
-            }
-        }
-        #musicDisc img{
-            width: calc(100% - 4px);
-            height: calc(100% - 4px);
-            border: solid black 2px;
-            border-radius: 50%;
-        }
-        #musicInfo{
-            margin-top: 15px;
-            width: 175px;
-            height: 80%;
-            float: right;
-            color: white;
-        }
-
-        @media only screen 
-        and (min-width: 320px)
-        and (max-width: 768px) {
-        /* For mobile phones: */
-            header, .playMusic{
-                width: 100%;
-                height: 10%;
-            }
-            #main{
-                width: 100%;
-                height: 12%;
-            }
-            #content{
-                width: 100%;
-                height: 68%;
-            }
-            #head2{
-                width: 30%;
-                height:100%;
-                float: right;
-            }
-            #head2 #info{
-                width: 45%;
-                float: left;
-                margin-left: 40px;
-            }
-            #head2 #Log{
-                width: 35%;
-            }
-            #main .fas, #main h4{
-                display: none;
-            }
-            #main ul{
-                width: 100%;
-                height: auto;
-            }
-            #main li{
-                width: 100%;
-            }
-            .music{
-                width: 50%;
-                text-align: center;
-                height: auto;
-                float: left;
-            }
-            .music #dropDown_content{
-                width: 130px;
-                height: auto;
-                position: absolute;
-            }
-            #playMusic #musicInfo{
-                display: none;
-            }
-            #playMusic #show{
-                float: left;
-                width: 30%;
-            }
-            #playMusic #audio{
-                width: 70%;
-                float: right;
-                padding: 10px 0 0 0;
-            }
-        }
-    </style>
+    <link href="Admin/Bootstrap/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="Admin/Bootstrap/dist/css/font-awesome.min.css" rel="stylesheet" />
+<link href="Admin/Bootstrap/dist/css/admin.min.css" rel="stylesheet" type="text/css" />
+<link href="Admin/Bootstrap/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+<link href="Admin/Bootstrap/glyphicons.css" rel="stylesheet" type="text/css" />
+<link href="Admin/Bootstrap/css/stylenewaddmin.css" rel="stylesheet" type="text/css" />
+<link href="Admin/Bootstrapcss/table.css" rel="stylesheet" type="text/css" />
+     <link href="Admin/assets/css/StyleSheetHome.css" rel="stylesheet" />
+    <link href="Admin/assets/css/StyleSheetMaster.css" rel="stylesheet" />
+    <link href="Admin/Bootstrap/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
+    <form action="#" method="post" runat="server">
     <header>
         <div id="head1">
-            <img id="logo" src="Picture/logo.png">
+            <img id="logo" src="Picture/Icon/logo.jpg">
         </div>
-        <div id="head2">
-            <form id="info"> 
-                <a href="ChangeAvt.aspx"><asp:Image ID="avatar" runat="server" ImageUrl="Picture/avt_user.jpg"/></a>
-                <asp:Label ID="showName" runat="server" Text="Hello"></asp:Label>
-            </form>
-            <form runat="server">
-                <div id="Log">
-                    <img class="fas" src="Picture/down_icon.png"></img>
-                    <div id="Out_In">
-                        <asp:Button CssClass="down" runat="server" Text="Log In   " OnClick="Log_In"/>
-                        <asp:Button CssClass="down" runat="server" Text="Log Out" PostBackUrl="~/LogIn.aspx"/>
-                    </div>
-                </div>
-            </form>
+        <div class="search">
+            <div>
+                <%--<input type="text" name="search" id="search" placeholder="Tên bài hát" />
+                <input type="submit" name="sub" value="Tìm kiếm" class="btn btn-primary"/>--%>
+                <asp:TextBox ID="txttenbh" runat="server"></asp:TextBox>
+                <asp:Button ID="searchM" runat="server" Text="Search" OnClick="searchM_Click" CssClass="btn btn-primary"/>
+            </div>
+    </div>
+        <div id="head2" style="height:70px">
+            <div id="info"> 
+                <a href="#"><asp:Image ID="avatar" runat="server" ImageUrl="~/Picture/Icon/user.jpg"/></a>
+                <asp:Label ID="showName" runat="server"></asp:Label>
+            </div>
+            <div runat="server">
+                        <asp:Button CssClass="btn btn-primary" runat="server" Text="Đăng nhập" OnClick="Log_In"/>
+                        <asp:Button CssClass="btn btn-primary"  runat="server" Text="Đăng xuất" OnClick="Unnamed2_Click"/> 
+            </div>
         </div>
     </header>
-
     <div id="main">
-        <h4>ÂM NHẠC</h4>
         <ul>
             <div class="music">
-                <img class="fas" src="Picture/music_icon.png"></img>
-                <li><a href="#"> Bài hát </a></li>
-            </div>
-             <div class="music">
-                <img class="fas" src="Picture/music_icon.png"></img>
-                <li><a href="#"> Chủ đề </a></li>
-            </div>
-             <div class="music">
-                <img class="fas" src="Picture/music_icon.png"></img>
-                <li><a href="#"> Thể loại </a></li>
-            </div>
-             <div class="music">
-                <img class="fas" src="Picture/music_icon.png"></img>
-                <li><a href="#"> Ca sĩ </a></li>
+                <img class="fas" src="Picture/Icon/iconmusic.jpg"/>
+                <li><a href="TrangChu.aspx"> Trang chủ </a></li>
             </div>
             <div class="music">
-                <img class="fas" src="Picture/album_icon.png"></img>
-                <div id="dropDown">
-                    <li><a id="clickDropDown"> Albums </a></li>
-                    <div id="dropDown_content">
-                        <p onclick="setShowAlbum('V-POP')"> V-POP </p>
-                        <p onclick="setShowAlbum('K-POP')"> K-POP </p>
-                        <p onclick="setShowAlbum('J-POP')"> J-POP </p>
-                        <p onclick="setShowAlbum('US-UK')"> US-UK </p>
-                    </div>
-                </div>
+               <img class="fas" src="Picture/Icon/iconmusic.jpg"/>
+                <li><a href="BaiHat.aspx"> Bài Hát </a></li>
             </div>
-
+             <div class="music">
+               <img class="fas" src="Picture/Icon/iconmusic.jpg"/>
+                <li><a href="TheLoai.aspx"> Thể loại </a>
+                </li>
+            </div>
+             <div class="music">
+               <img class="fas" src="Picture/Icon/iconmusic.jpg"/>
+                <li><a href="CaSi.aspx"> Ca sĩ </a></li>
+            </div>
+            <div class="music">
+              <img class="fas" src="Picture/Icon/iconmusic.jpg"/>
+                <li><a href="Album.aspx"> Album </a></li>
+            </div>
         </ul>
 
-        <h4> NHẠC CÁ NHÂN </h4>
-        <ul>
-            <div class="music">
-                <img class="fas" src="Picture/yoursong_icon.png"></img>
-                <li><a href="YourSong.aspx"> Nhạc của bạn </a></li>
-            </div>
-            <div class="music">
-                <img class="fas" src="Picture/upload_icon.png"></img>
-                <li><a href="UpLoadMusic.aspx"> Nhạc đã tải </a></li>
-            </div>
-        </ul>
-    </div>
+        </div>
+    
 
-    <form id="content" method="post">
+    <div id="content">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                
             </asp:ContentPlaceHolder>
         </div>
-    </form>
-
-    <div id="playMusic">
-        <div id="show">
-            <div id="musicDisc">
-                <img id="showI" src="Picture/logoMusic.jpg"/>
-            </div>
-            <div id="musicInfo">
-                <b id="showN"></b> <br />
-                <i id="showS"></i>
-            </div>
-        </div>
-
-        <audio id="audio" preload="auto" autoplay="true" loop="true" controls>
-        <source src="a.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-        </audio>
-
-        <script>
-            function setShowAlbum(nameAlbum) {
-                var listSong = document.getElementsByClassName("musicSong");
-                for (var i = 0; i < listSong.length; i++) {
-                    if (listSong[i].getElementsByTagName('i')[0].innerText != '(' + nameAlbum + ')') {
-                        listSong[i].style.display = "none";
-                    }
-                    else {
-                        listSong[i].style.display = "block";
-                    }
-                }
-            }
-        </script>
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </div>
+    <footer> Copyright by Nông Việt Hoàng and Trần Trung Hiếu</footer>
+    <style type="text/css">
+        footer {
+    line-height: 50px;
+    bottom: 0;
+    background: #f0f0f0;
+    clear: both;
+    text-align: center;
+    font-size: 20px;
+    color: red;
+    height: 50px;
+}
+        .search {
+    /* margin: auto; */
+    width: 431px;
+    padding-top: 21px;
+    margin:auto;
+}
+    </style>
+        </form>
 </body>
 </html>

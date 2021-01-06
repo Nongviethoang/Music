@@ -16,7 +16,7 @@ namespace MusicWeb.Entity
             this.maTheLoai = maTheLoai;
             this.maCaSi = maCaSi;
             this.maAlbum = maAlbum;
-            this.anh = anh;
+            this.anhBaiHat = anh;
         }
         public BaiHat()
         {
@@ -29,7 +29,8 @@ namespace MusicWeb.Entity
         public int maTheLoai { get; set; }
         public int maCaSi { get; set; }
         public int maAlbum { get; set; }
-        public string anh { get; set; }
+        public string anhBaiHat { get; set; }
+        public string loiBaiHat { get; set; }
 
     }
 }

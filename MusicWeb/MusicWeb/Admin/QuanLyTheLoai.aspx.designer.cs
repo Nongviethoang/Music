@@ -13,22 +13,22 @@ namespace WebNgheNhac.Admin {
     public partial class QuanLyTheLoai {
         
         /// <summary>
-        /// tblThemTheLoai control.
+        /// txtmatl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblThemTheLoai;
+        protected global::System.Web.UI.WebControls.TextBox txtmatl;
         
         /// <summary>
-        /// txtTenTheLoai control.
+        /// txtTenTL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTenTheLoai;
+        protected global::System.Web.UI.WebControls.TextBox txtTenTL;
         
         /// <summary>
         /// dlchude control.
@@ -40,48 +40,39 @@ namespace WebNgheNhac.Admin {
         protected global::System.Web.UI.WebControls.DropDownList dlchude;
         
         /// <summary>
-        /// btnThemTl control.
+        /// qltl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnThemTl;
+        protected global::System.Web.UI.WebControls.Button qltl;
         
         /// <summary>
-        /// bntXoa control.
+        /// btnSuaTl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bntXoa;
+        protected global::System.Web.UI.WebControls.Button btnSuaTl;
         
         /// <summary>
-        /// mess control.
+        /// mes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label mess;
+        protected global::System.Web.UI.WebControls.Label mes;
         
         /// <summary>
-        /// GridViewTheLoai control.
+        /// dsTheLoai control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewTheLoai;
-        
-        /// <summary>
-        /// SqlDataSource1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.GridView dsTheLoai;
     }
 }

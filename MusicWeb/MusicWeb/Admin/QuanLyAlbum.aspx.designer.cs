@@ -13,58 +13,49 @@ namespace MusicWeb.Admin {
     public partial class QuanLyAlbum {
         
         /// <summary>
-        /// themAlbum control.
+        /// txtMaAl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table themAlbum;
+        protected global::System.Web.UI.WebControls.TextBox txtMaAl;
         
         /// <summary>
-        /// txtTenAablbum control.
+        /// txtTenAL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTenAablbum;
+        protected global::System.Web.UI.WebControls.TextBox txtTenAL;
         
         /// <summary>
-        /// txtmota control.
+        /// dtAl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtmota;
+        protected global::System.Web.UI.WebControls.Calendar dtAl;
         
         /// <summary>
-        /// txtAnh control.
+        /// imgAl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAnh;
+        protected global::System.Web.UI.WebControls.FileUpload imgAl;
         
         /// <summary>
-        /// txtthoigian control.
+        /// txtMota control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtthoigian;
-        
-        /// <summary>
-        /// TextBox4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox txtMota;
         
         /// <summary>
         /// themAlbummoi control.
@@ -76,21 +67,30 @@ namespace MusicWeb.Admin {
         protected global::System.Web.UI.WebControls.Button themAlbummoi;
         
         /// <summary>
-        /// GridView1 control.
+        /// btnSua control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Button btnSua;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// mes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Label mes;
+        
+        /// <summary>
+        /// dsAlbum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView dsAlbum;
     }
 }

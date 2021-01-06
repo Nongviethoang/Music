@@ -6,21 +6,16 @@
     Thêm mới chủ đề
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="formThem" runat="server">
-    <asp:Table ID="tblThemChuDe" runat="server">
-        <asp:TableRow>
-            <asp:TableCell>Mã chủ đề</asp:TableCell>
-            <asp:TableCell><asp:TextBox ID="txtMaCd" runat="server" ReadOnly="true"></asp:TextBox></asp:TableCell>
-
-        </asp:TableRow>
-        <asp:TableRow>
-            <asp:TableCell>Tên chủ đề</asp:TableCell>
-            <asp:TableCell><asp:TextBox ID="txtTenChuDe" runat="server"></asp:TextBox></asp:TableCell>
-
-        </asp:TableRow>
-        
-    </asp:Table>
-    <asp:Button ID="btnThemCd" runat="server" Text="Thêm chủ để" OnClick="btnThemCd_Click" />
-            <asp:Button ID="bntXoa" runat="server" Text="Cancel" />
+    <div class="form-group">
+        <label>Mã chủ đề</label>
+        <asp:TextBox ID="txtmacd" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
+    </div>
+    <div class="form-group">
+        <label>Tên chủ đề</label>
+        <asp:TextBox ID="txttencd" runat="server" CssClass="form-control"></asp:TextBox>
+    </div>
+    <asp:Button ID="btnThemCd" runat="server" Text="Thêm chủ để" OnClick="btnThemCd_Click" CssClass="btn btn-primary" />
+      <asp:Button ID="btnSua" runat="server" Text="Sửa chủ để" CssClass="btn btn-primary" OnClick="btnSua_Click" />     
     <br />
     <asp:Label ID="mess" runat="server"></asp:Label>
 
@@ -29,27 +24,28 @@
     Danh sách chủ để
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ListDanhSach" runat="server">
-
-    
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="maChuDe" DataSourceID="SqlDataSource1">
+    <asp:GridView ID="dsChuDe" runat="server" AutoGenerateColumns="False">
         <Columns>
-            <asp:BoundField DataField="maChuDe" HeaderText="maChuDe" InsertVisible="False" ReadOnly="True" SortExpression="maChuDe" />
-            <asp:BoundField DataField="tenChuDe" HeaderText="tenChuDe" SortExpression="tenChuDe" />
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
+            <asp:BoundField DataField="maChuDe" HeaderText="Mã chủ đề" />
+            <asp:BoundField DataField="tenChuDe" HeaderText="Tên chủ đề" />
+            <asp:TemplateField HeaderText="Xóa">
+                <ItemTemplate>
+                    <asp:Button ID="xoa" runat="server" CommandArgument='<%#Bind("maChuDe") %>'
+                        CommandName="xoa" Text="Xóa" OnClientClick="return confirm('Bạn có muốn xóa?')"
+                        OnCommand="Xoa_Click" />
+                </ItemTemplate>
+                </asp:TemplateField>
+                 <asp:TemplateField HeaderText="Sửa">
+                 <ItemTemplate>
+                    <asp:Button ID="sua" runat="server" CommandArgument='<%#Bind("maChuDe") %>'
+                        CommandName="sua" Text="Sửa" 
+                        OnCommand="Sua_Click" />
+                </ItemTemplate>
+            </asp:TemplateField>
         </Columns>
-    </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseMusicConnectionString %>" DeleteCommand="DELETE FROM [tblChuDe] WHERE [maChuDe] = @maChuDe" InsertCommand="INSERT INTO [tblChuDe] ([tenChuDe]) VALUES (@tenChuDe)" SelectCommand="SELECT * FROM [tblChuDe]" UpdateCommand="UPDATE [tblChuDe] SET [tenChuDe] = @tenChuDe WHERE [maChuDe] = @maChuDe">
-        <DeleteParameters>
-            <asp:Parameter Name="maChuDe" Type="Int32" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="tenChuDe" Type="String" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="tenChuDe" Type="String" />
-            <asp:Parameter Name="maChuDe" Type="Int32" />
-        </UpdateParameters>
-    </asp:SqlDataSource>
 
+    </asp:GridView>
+    
+   
     
 </asp:Content>

@@ -5,55 +5,48 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="TieuDeChucNang" runat="server">Thêm thể loại
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="formThem" runat="server">
-    <asp:Table ID="tblThemTheLoai" runat="server">
-        <asp:TableRow>
-            <asp:TableCell>Tên thể loại</asp:TableCell>
-            <asp:TableCell><asp:TextBox ID="txtTenTheLoai" runat="server"></asp:TextBox></asp:TableCell>
-        </asp:TableRow>
-        <asp:TableRow>
-            <asp:TableCell>Tên chủ đề</asp:TableCell>
-            <asp:TableCell><asp:DropDownList ID="dlchude" runat="server">
+    <div class="form-group">
+        <label >Mã thể loại</label>
+        <asp:TextBox ID="txtmatl" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
+    </div>
+    <div class="form-group">
+        <label >Tên thể loại</label>
+        <asp:TextBox ID="txtTenTL" runat="server" CssClass="form-control"></asp:TextBox>
+    </div>
+     <div class="form-group">
+        <label >Tên chủ đề</label>
+        <asp:DropDownList ID="dlchude" runat="server"></asp:DropDownList>
+    </div>
+     <%--<asp:Button ID="AddTl" runat="server" CssClass="btn btn-primary" Text="Thêm thể loại" OnClick="AddTl_Click" />--%>
+    <asp:Button ID="qltl" runat="server" Text="Thêm thể  loại" CssClass="btn btn-primary" OnClick="qltl_Click" />
+    <asp:Button ID="btnSuaTl" runat="server" Text="Sửa" CssClass="btn btn-primary" OnClick="btnSuaTl_Click" />
 
-                           </asp:DropDownList></asp:TableCell>
-        </asp:TableRow>
-    </asp:Table>
-    <asp:Button ID="btnThemTl" runat="server" Text="Thêm thể loại" OnClick="btnThemTl_Click"  />
-            <asp:Button ID="bntXoa" runat="server" Text="Cancel" />
-    <br />
-    <asp:Label ID="mess" runat="server"></asp:Label>
+    <asp:Label ID="mes" runat="server"></asp:Label>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="TenDanhSach" runat="server">Danh sách thể loại
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ListDanhSach" runat="server">
-
-   
-
-    <asp:GridView ID="GridViewTheLoai" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="maTheLoai" DataSourceID="SqlDataSource1">
+    <asp:GridView ID="dsTheLoai" runat="server" AutoGenerateColumns="False">
         <Columns>
-            <asp:BoundField DataField="maTheLoai" HeaderText="maTheLoai" InsertVisible="False" ReadOnly="True" SortExpression="maTheLoai" />
-            <asp:BoundField DataField="tenTheLoai" HeaderText="tenTheLoai" SortExpression="tenTheLoai" />
-            <asp:BoundField DataField="maChuDe" HeaderText="maChuDe" SortExpression="maChuDe" />
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+            <asp:BoundField DataField="maTheLoai" HeaderText="Mã thể loại" />
+            <asp:BoundField DataField="tenTheLoai" HeaderText="Tên thể loại" />
+            <asp:BoundField DataField="maChuDe" HeaderText="Mã chủ đề" />
+            <asp:TemplateField HeaderText="Xóa">
+                <ItemTemplate>
+                    <asp:Button ID="xoa" CommandArgument='<%#Bind("maTheLoai")%>'
+                        CommandName="xoa" Text="Xóa" OnClientClick="return confirm('Bạn có muốn xóa?')"
+                        runat="server" OnCommand="xoa_Command"/>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Sửa">
+                <ItemTemplate>
+                    <asp:Button ID="sua" CommandArgument='<%#Bind("maTheLoai")%>'
+                        CommandName="sua" Text="Sửa" 
+                        runat="server" OnCommand="sua_Command"/>
+                </ItemTemplate>
+            </asp:TemplateField>
         </Columns>
+        
     </asp:GridView>
-
-   
-
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseMusicConnectionString %>" DeleteCommand="DELETE FROM [tblTheLoai] WHERE [maTheLoai] = @maTheLoai" InsertCommand="INSERT INTO [tblTheLoai] ([tenTheLoai], [maChuDe]) VALUES (@tenTheLoai, @maChuDe)" SelectCommand="SELECT * FROM [tblTheLoai]" UpdateCommand="UPDATE [tblTheLoai] SET [tenTheLoai] = @tenTheLoai, [maChuDe] = @maChuDe WHERE [maTheLoai] = @maTheLoai">
-        <DeleteParameters>
-            <asp:Parameter Name="maTheLoai" Type="Int32" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="tenTheLoai" Type="String" />
-            <asp:Parameter Name="maChuDe" Type="Int32" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="tenTheLoai" Type="String" />
-            <asp:Parameter Name="maChuDe" Type="Int32" />
-            <asp:Parameter Name="maTheLoai" Type="Int32" />
-        </UpdateParameters>
-    </asp:SqlDataSource>
-
-   
 
 </asp:Content>

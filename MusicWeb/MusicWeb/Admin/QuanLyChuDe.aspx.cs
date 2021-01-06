@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using MusicWeb.Entity;
-
 namespace MusicWeb.Admin
 {
     public partial class QuanLyChuDe : System.Web.UI.Page
@@ -20,8 +19,8 @@ namespace MusicWeb.Admin
         {
             try
             {
-                ChuDe cd = new ChuDe();
-                cd.tenChuDe = txtTenChuDe.Text;
+                Entity.ChuDe cd = new Entity.ChuDe();
+                cd.tenChuDe = txttencd.Text;
                 data.themChuDe(cd);
                 mess.Text = "Thêm thành công";
                 LoadDs();
@@ -33,27 +32,48 @@ namespace MusicWeb.Admin
         }
         public void LoadDs()
         {
-            
+            dsChuDe.DataSource = data.dsChuDe();
+            DataBind();
         }
         protected void Xoa_Click(object sender, CommandEventArgs e)
         {
+            try
+            {
+
+           
            if(e.CommandName=="xoa")
             {
                 int ma = Convert.ToInt16(e.CommandArgument);
                 data.xoaChuDe(ma);
+                LoadDs();
+            }
+            }
+            catch(Exception ex)
+            {
+                mess.Text = "Lỗi " + ex.Message;
             }
         }
         protected void Sua_Click(object sender, CommandEventArgs e)
         {
-            if (e.CommandName == "sua")
+            if(e.CommandName=="sua")
             {
-                int ma = Convert.ToInt16(e.CommandArgument);
-                ChuDe cd = data.suaCD(ma);
-                txtMaCd.Text = cd.maChuDe.ToString();
-                txtTenChuDe.Text = cd.tenChuDe.ToString();
+                int macd = Convert.ToInt16(e.CommandArgument);
+                Entity.ChuDe cd = data.suaCD(macd);
+                txttencd.Text = cd.tenChuDe;
+                txtmacd.Text = cd.maChuDe.ToString();
 
-               
             }
+        }
+
+        protected void btnSua_Click(object sender, EventArgs e)
+        {
+            Entity.ChuDe cd = new Entity.ChuDe();
+            cd.maChuDe = int.Parse(txtmacd.Text);
+            cd.tenChuDe = txttencd.Text;
+            data.capNhatChuDe(cd);
+            LoadDs();
+            mess.Text = "Sửa thành công";
+            txtmacd.Text = "";
         }
     }
 }

@@ -30,15 +30,15 @@
   <nav class="navbar navbar-static-top" role="navigation"> <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"> <span class="sr-only">Toggle navigation</span> </a>
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
-        <li class="dropdown user user-menu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="../images/admin.jpg" class="user-image" alt="User Image"/> <span class="hidden-xs">Hello, guys</span> </a>
+        <li class="dropdown user user-menu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="../Picture/Icon/admin.jpg" class="user-image" alt="User Image"/> <span class="hidden-xs">Hello, guys</span> </a>
           <ul class="dropdown-menu">
             <!-- User image -->
-            <li class="user-header"> <img src="../images/admin.jpg" class="img-circle" alt="User Image" />
+            <li class="user-header"> <img src="../Picture/Icon/admin.jpg" class="img-circle" alt="User Image" />
               <p> Hero</p>
             </li>
             <li class="user-footer">
-              <div class="pull-left"> <a href="ChinhSuaThongTinAdmin.aspx" class="btn btn-default btn-flat">Chỉnh sửa hông tin</a> </div>
-              <div class="pull-right"> <a href="../LogIn.aspx" class="btn btn-default btn-flat">Đăng xuất</a> </div>
+              <div class="pull-left"> <a href="#" class="btn btn-default btn-flat">Chỉnh sửa hông tin</a> </div>
+              <div class="pull-right"> <a href="../DangNhap.aspx" class="btn btn-default btn-flat">Đăng xuất</a> </div>
             </li>
           </ul>
         </li>
@@ -46,25 +46,25 @@
     </div>
   </nav>
 </header>
-<aside class="main-sidebar">
-  <section class="sidebar">
+<div class="main-sidebar">
+  <div class="sidebar">
     <ul class="sidebar-menu">
       <li class="treeview"> <a href="QuanLyChuDe.aspx"> <i class="fa fa-cubes"></i> <span>Quản lý chủ đề</span> </a> 
       </li>
          <li class="treeview"> <a href="QuanLyTheLoai.aspx"> <i class="fa fa-cubes"></i> <span>Quản lý thể loại</span> </a> 
       </li>
        <li class="treeview"> <a href="QuanLyThanhVien.aspx"><i class="fa fa-users"> </i>  <span>Thành viên</span></a></li>
-       <li> <a href="QuanLyBinhLuan.aspx"><i class="fa fa-comment"></i> <span>Tất cả bình luận</span> </a></li>
+        <li> <a href="QuanLyCaSi.aspx"> <i class="fa fa-link"></i> <span>Quản lý ca sĩ</span> </a> </li>
         <li style="    margin-left: -10px;"> <a href="QuanLyAlbum.aspx"><i class="glyphicon glyphicon-film"></i> <span>Quản lý Album</span> </a>
-       <li style="    margin-left: -10px;"> <a href="QuanLyBinhLuan.aspx"><i class="glyphicon glyphicon-headphones"></i> <span>Quản lý bài hát</span> </a>  
+       <li style="    margin-left: -10px;"> <a href="QuanLyBaiHat.aspx"><i class="glyphicon glyphicon-headphones"></i> <span>Quản lý bài hát</span> </a>  
       </li>
-        <li> <a href="../HomePage.aspx"> <i class="fa fa-link"></i> <span>Trang nhạc</span> </a> </li>
-        <li> <a href="#"> <i class="fa fa-link"></i> <span>Bài hát đã được tải</span> </a> </li>
+        <li> <a href="../TrangChu.aspx"> <i class="fa fa-link"></i> <span>Trang nhạc</span> </a> </li>
+       <li> <a href="QuanLyBinhLuan.aspx"> <i class="fa fa-link"></i> <span>Danh sách bình luận</span> </a> </li>
     </ul>
-  </section>
+  </div>
   <!-- /.sidebar --> 
   
-</aside>
+</div>
 <!-- InstanceBeginEditable name="content" --> 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">

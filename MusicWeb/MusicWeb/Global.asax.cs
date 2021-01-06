@@ -18,7 +18,7 @@ namespace MusicWeb
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            Session["user"] = null;
+            Session["ThanhVienHienTai"] = null;
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

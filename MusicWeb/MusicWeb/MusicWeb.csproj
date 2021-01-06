@@ -71,6 +71,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Admin.aspx" />
     <Content Include="Admin\assets\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Admin\assets\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Admin\assets\bootstrap\css\bootstrap.css" />
@@ -83,6 +84,8 @@
     <Content Include="Admin\assets\bootstrap\js\npm.js" />
     <Content Include="Admin\assets\css\form-elements.css" />
     <Content Include="Admin\assets\css\style.css" />
+    <Content Include="Admin\assets\css\StyleSheetHome.css" />
+    <Content Include="Admin\assets\css\StyleSheetMaster.css" />
     <Content Include="Admin\assets\font-awesome\css\font-awesome.css" />
     <Content Include="Admin\assets\font-awesome\css\font-awesome.min.css" />
     <Content Include="Admin\assets\font-awesome\fonts\fontawesome-webfont.svg" />
@@ -183,13 +186,54 @@
     <Content Include="Admin\QuanLyAlbum.aspx" />
     <Content Include="Admin\QuanLyBaiHat.aspx" />
     <Content Include="Admin\QuanLyBinhLuan.aspx" />
+    <Content Include="Admin\QuanLyCaSi.aspx" />
     <Content Include="Admin\QuanLyChuDe.aspx" />
     <Content Include="Admin\QuanLyThanhVien.aspx" />
     <Content Include="Admin\QuanLyTheLoai.aspx" />
-    <Content Include="ChangeAvt.aspx" />
-    <Content Include="HomePage.aspx" />
+    <Content Include="Album.aspx" />
+    <Content Include="BaiHat.aspx" />
+    <Content Include="CaSi.aspx" />
+    <Content Include="ChiTietAlbum.aspx" />
+    <Content Include="ChiTietCaSi.aspx" />
+    <Content Include="DangNhap.aspx" />
+    <Content Include="Picture\Icon\75497644_780220982404755_4348629042597986304_n.jpg" />
+    <Content Include="TrangChu.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="LogIn.aspx" />
+    <Content Include="MasterPage.aspx" />
+    <Content Include="Music\chan_ai_phong_max_remix_orange_x_khoi_x_chau_dang_khoa_nhac_tiktok_gay_nghien_2020_1464574.mp3" />
+    <Content Include="Music\DiDuDuaDiRemix-BichPhuong-6061120.mp3" />
+    <Content Include="Music\Em-Oi-Len-Pho-Minh-Vuong-M4U.mp3" />
+    <Content Include="Music\Fancy-TWICE-5946557.mp3" />
+    <Content Include="Music\Fire-BTSBangtanBoys-4428076.mp3" />
+    <Content Include="Music\GhenCoVy20-KhacHungSAMBI-6239910.mp3" />
+    <Content Include="Music\Hai-Phut-Hon-Phao-CM1X.mp3" />
+    <Content Include="Music\Hong-Nhan-Jack.mp3" />
+    <Content Include="Music\LoveAgain-NCTDream-6269018.mp3" />
+    <Content Include="Music\Nhu-Loi-Don-Bao-Anh.mp3" />
+    <Content Include="Music\Simple-Love-Obito-Seachains-Davis.mp3" />
+    <Content Include="Music\TopJapaneseVersionExtendedVersion-StrayKids-6262487.mp3" />
+    <Content Include="Music\vietsub_kara_that_girl_olly_murs_lyrics_tik_tok.mp3" />
+    <Content Include="Music\vietsub_lyrics_so_far_away_adam_christopher_martin_garrix_david_guetta_acoustic_version.mp3" />
+    <Content Include="PhatNhac.aspx" />
+    <Content Include="Picture\Album\albts.jpg" />
+    <Content Include="Picture\Album\chungtacuaht.jpg" />
+    <Content Include="Picture\Album\hoahaiduong.jpg" />
+    <Content Include="Picture\Album\minhvuong.jpg" />
+    <Content Include="Picture\Album\mvm4u.jpg" />
+    <Content Include="Picture\Album\twice.jpg" />
+    <Content Include="Picture\Banner\1.jpg" />
+    <Content Include="Picture\Banner\2.jpg" />
+    <Content Include="Picture\Banner\3.jpg" />
+    <Content Include="Picture\Banner\4.jpg" />
+    <Content Include="Picture\Banner\5.jpg" />
+    <Content Include="Picture\Icon\admin.jpg" />
+    <Content Include="Picture\Icon\down_icon.png" />
+    <Content Include="Picture\Icon\iconcasi.jpg" />
+    <Content Include="Picture\Icon\iconms.jpg" />
+    <Content Include="Picture\Icon\iconmusic.jpg" />
+    <Content Include="Picture\Icon\logo.jpg" />
+    <Content Include="Picture\Icon\user.jpg" />
+    <Content Include="Picture\Singer\bichphuong.jpg" />
     <Content Include="plugin\ckfinder\ckfinder\bin\Debug\CKFinder.dll" />
     <Content Include="plugin\ckfinder\ckfinder\bin\Debug\CKFinder.pdb" />
     <Content Include="plugin\ckfinder\ckfinder\bin\Debug\CKFinder_FileEditor.dll" />
@@ -865,14 +909,19 @@
     <Content Include="plugin\ckfinder\ckfinder\_samples\skin_v1.html" />
     <Content Include="plugin\ckfinder\ckfinder\_samples\standalone.html" />
     <Content Include="plugin\ckfinder\ckfinder\_samples\standalone_v1.html" />
-    <Content Include="SignUp.aspx" />
-    <Content Include="UpLoadMusic.aspx" />
-    <Content Include="users.xml" />
+    <Content Include="DangKi.aspx" />
+    <Content Include="TheLoai.aspx" />
     <Content Include="Web.config" />
-    <Content Include="musics.xml" />
-    <Content Include="YourSong.aspx" />
+    <Content Include="MsPage.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -901,6 +950,13 @@
     <Compile Include="Admin\QuanLyBinhLuan.aspx.designer.cs">
       <DependentUpon>QuanLyBinhLuan.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\QuanLyCaSi.aspx.cs">
+      <DependentUpon>QuanLyCaSi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\QuanLyCaSi.aspx.designer.cs">
+      <DependentUpon>QuanLyCaSi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\QuanLyChuDe.aspx.cs">
       <DependentUpon>QuanLyChuDe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -922,36 +978,67 @@
     <Compile Include="Admin\QuanLyTheLoai.aspx.designer.cs">
       <DependentUpon>QuanLyTheLoai.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ChangeAvt.aspx.cs">
-      <DependentUpon>ChangeAvt.aspx</DependentUpon>
+    <Compile Include="Album.aspx.cs">
+      <DependentUpon>Album.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ChangeAvt.aspx.designer.cs">
-      <DependentUpon>ChangeAvt.aspx</DependentUpon>
+    <Compile Include="Album.aspx.designer.cs">
+      <DependentUpon>Album.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaiHat.aspx.cs">
+      <DependentUpon>BaiHat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaiHat.aspx.designer.cs">
+      <DependentUpon>BaiHat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CaSi.aspx.cs">
+      <DependentUpon>CaSi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CaSi.aspx.designer.cs">
+      <DependentUpon>CaSi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietAlbum.aspx.cs">
+      <DependentUpon>ChiTietAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTietAlbum.aspx.designer.cs">
+      <DependentUpon>ChiTietAlbum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietCaSi.aspx.cs">
+      <DependentUpon>ChiTietCaSi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTietCaSi.aspx.designer.cs">
+      <DependentUpon>ChiTietCaSi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap.aspx.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangNhap.aspx.designer.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
     </Compile>
     <Compile Include="Entity\Album.cs" />
     <Compile Include="Entity\BaiHat.cs" />
+    <Compile Include="Entity\BaiHatTenCs.cs" />
+    <Compile Include="Entity\CamNhan.cs" />
+    <Compile Include="Entity\CamNhanTV.cs" />
     <Compile Include="Entity\CaSi.cs" />
     <Compile Include="Entity\ChuDe.cs" />
     <Compile Include="Entity\ThanhVien.cs" />
     <Compile Include="Entity\TheLoai.cs" />
     <Compile Include="Entity\DataUtils.cs" />
-    <Compile Include="HomePage.aspx.cs">
-      <DependentUpon>HomePage.aspx</DependentUpon>
+    <Compile Include="TrangChu.aspx.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="HomePage.aspx.designer.cs">
-      <DependentUpon>HomePage.aspx</DependentUpon>
+    <Compile Include="TrangChu.aspx.designer.cs">
+      <DependentUpon>TrangChu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="LogIn.aspx.cs">
-      <DependentUpon>LogIn.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LogIn.aspx.designer.cs">
-      <DependentUpon>LogIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Master.Master.cs">
       <DependentUpon>Master.Master</DependentUpon>
@@ -960,31 +1047,41 @@
     <Compile Include="Master.Master.designer.cs">
       <DependentUpon>Master.Master</DependentUpon>
     </Compile>
-    <Compile Include="Entity\Musics.cs" />
+    <Compile Include="MasterPage.aspx.cs">
+      <DependentUpon>MasterPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.aspx.designer.cs">
+      <DependentUpon>MasterPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PhatNhac.aspx.cs">
+      <DependentUpon>PhatNhac.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PhatNhac.aspx.designer.cs">
+      <DependentUpon>PhatNhac.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SignUp.aspx.cs">
-      <DependentUpon>SignUp.aspx</DependentUpon>
+    <Compile Include="DangKi.aspx.cs">
+      <DependentUpon>DangKi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SignUp.aspx.designer.cs">
-      <DependentUpon>SignUp.aspx</DependentUpon>
+    <Compile Include="DangKi.aspx.designer.cs">
+      <DependentUpon>DangKi.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Entity\Singers.cs" />
-    <Compile Include="UpLoadMusic.aspx.cs">
-      <DependentUpon>UpLoadMusic.aspx</DependentUpon>
+    <Compile Include="TheLoai.aspx.cs">
+      <DependentUpon>TheLoai.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UpLoadMusic.aspx.designer.cs">
-      <DependentUpon>UpLoadMusic.aspx</DependentUpon>
+    <Compile Include="TheLoai.aspx.designer.cs">
+      <DependentUpon>TheLoai.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Entity\User.cs" />
-    <Compile Include="Entity\XMLFile.cs" />
-    <Compile Include="YourSong.aspx.cs">
-      <DependentUpon>YourSong.aspx</DependentUpon>
+    <Compile Include="MsPage.aspx.cs">
+      <DependentUpon>MsPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="YourSong.aspx.designer.cs">
-      <DependentUpon>YourSong.aspx</DependentUpon>
+    <Compile Include="MsPage.aspx.designer.cs">
+      <DependentUpon>MsPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1097,7 +1194,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Picture\" />
+    <Folder Include="Picture\Music\" />
     <Folder Include="plugin\ckfinder\ckfinder\userfiles\files\" />
     <Folder Include="plugin\ckfinder\ckfinder\userfiles\flash\" />
     <Folder Include="plugin\ckfinder\userfiles\files\" />

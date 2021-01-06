@@ -13,76 +13,85 @@ namespace MusicWeb.Admin {
     public partial class QuanLyBaiHat {
         
         /// <summary>
-        /// tblTehmBaihat control.
+        /// txtmabh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblTehmBaihat;
+        protected global::System.Web.UI.WebControls.TextBox txtmabh;
         
         /// <summary>
-        /// txtTenBaihat control.
+        /// txttenbh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTenBaihat;
+        protected global::System.Web.UI.WebControls.TextBox txttenbh;
         
         /// <summary>
-        /// TextBox1 control.
+        /// fileNhac control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.FileUpload fileNhac;
         
         /// <summary>
-        /// TextBox2 control.
+        /// dlTinhTrang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.DropDownList dlTinhTrang;
         
         /// <summary>
-        /// TextBox3 control.
+        /// dlmatl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.DropDownList dlmatl;
         
         /// <summary>
-        /// TextBox4 control.
+        /// dlcasi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.DropDownList dlcasi;
         
         /// <summary>
-        /// TextBox5 control.
+        /// dlalbum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.DropDownList dlalbum;
         
         /// <summary>
-        /// TextBox6 control.
+        /// fileAnh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.FileUpload fileAnh;
+        
+        /// <summary>
+        /// txtLoiBaiHat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLoiBaiHat;
         
         /// <summary>
         /// btnThemBaihat control.
@@ -94,21 +103,30 @@ namespace MusicWeb.Admin {
         protected global::System.Web.UI.WebControls.Button btnThemBaihat;
         
         /// <summary>
-        /// GridView1 control.
+        /// btnSuaBaihat control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Button btnSuaBaihat;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// mes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Label mes;
+        
+        /// <summary>
+        /// dsBaiHat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView dsBaiHat;
     }
 }
